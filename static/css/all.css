@@ -189,7 +189,7 @@ p#previouslyhosted {
 div#wrapper {
   width: 940px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 15px;
   overflow: hidden;
 }
 div#primary {
@@ -394,7 +394,7 @@ div.entry p.mobile-date {
 div#bighead {
   width: 940px;
   margin: 0 auto;
-  padding: 25px 10px 15px 10px;
+  padding: 25px 15px 15px 15px;
 }
 div#bighead h1 {
   font-size: 1.6em;
@@ -405,6 +405,152 @@ div#bighead h1 {
 }
 div#bigheadcontainer {
   position: relative;
+}
+/* Hero banner fonts */
+@font-face {
+  font-family: 'GT America Compressed';
+  src: url('/static/fonts/GT-America-Compressed-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT America Standard';
+  src: url('/static/fonts/GT-America-Standard-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GT America Standard';
+  src: url('/static/fonts/GT-America-Standard-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+#hero-banner {
+  height: 200px;
+  background-color: black;
+  background-image: url('/static/images/backg.png');
+  background-size: cover;
+  background-position: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hero-banner .hero-content {
+  max-width: 940px;
+  width: 100%;
+}
+
+#hero-banner .section-header {
+  font-family: 'GT America Compressed', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
+  color: #00ff88;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+#hero-banner .section-header .byline {
+  font-family: 'GT America Standard', sans-serif;
+  font-weight: 500;
+  text-transform: none;
+  font-size: 50%;
+  padding-left: 3px;
+}
+
+#hero-banner .section-header a {
+  color: #00ff88;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 255, 136, 0.6);
+  text-underline-offset: 4px;
+}
+
+#hero-banner .section-header a:hover {
+  text-shadow: 0 0 8px #00ff88;
+}
+
+#hero-banner .intro-row {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+#hero-banner .intro-image {
+  flex: 0 0 200px;
+  max-width: 200px;
+}
+
+#hero-banner .intro-image a {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+#hero-banner .intro-image img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #00ff88;
+  box-shadow: 0 0 8px 2px rgba(0, 255, 136, 0.5), inset 0 0 2px rgba(0, 255, 136, 0.2);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+#hero-banner .intro-image img:hover {
+  box-shadow: 0 0 20px 6px rgba(0, 255, 136, 0.8), inset 0 0 4px rgba(0, 255, 136, 0.3);
+}
+
+#hero-banner .intro-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+#hero-banner .intro-text p {
+  font-family: 'GT America Standard', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #00ff88;
+  margin: 0;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 1), 0 0 16px rgba(0, 0, 0, 1), 0 0 24px rgba(0, 0, 0, 0.9), 0 0 32px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 964px) {
+  #hero-banner {
+    height: auto;
+    padding: 20px 15px;
+    box-sizing: border-box;
+  }
+
+  #hero-banner .hero-content {
+    max-width: 100%;
+  }
+
+  #hero-banner .intro-row {
+    flex-direction: column;
+  }
+
+  #hero-banner .intro-image {
+    flex: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  #hero-banner .intro-image img {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #hero-banner .intro-text {
+    width: 100%;
+  }
 }
 div#band {
   background: linear-gradient(
@@ -975,7 +1121,7 @@ h3.blog-mixed-list-year {
     box-sizing: border-box;
     width: 100%;
     margin: 0;
-    padding: 0 10px;
+    padding: 0 15px;
   }
   body.smallhead div#wrapper {
     width: auto;
@@ -1174,7 +1320,7 @@ body.homepage .hide-on-homepage {
 #h1-nav-wrapper ul {
   list-style-type: none;
   margin: 0;
-  padding: 0 1em 0 0;
+  padding: 0;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -1182,7 +1328,6 @@ body.homepage .hide-on-homepage {
 }
 #h1-nav-wrapper li {
   display: inline;
-  padding-right: 0.5em;
 }
 #h1-nav-wrapper li a {
   border-bottom: none;
