@@ -1045,6 +1045,12 @@ div.help p {
   margin: 0 0 1em 0;
 }
 
+#bigheadcontainer form {
+  display: block;
+}
+#bigheadcontainer form > div {
+  display: flex;
+}
 .search-input,
 .search-submit {
   border: 1px solid #6a6a6a;
@@ -1053,7 +1059,8 @@ div.help p {
   font-size: 16px;
 }
 .search-input {
-  width: 80%;
+  flex: 1;
+  max-width: none;
 }
 .search-submit {
   background-color: #6a6a6a;
