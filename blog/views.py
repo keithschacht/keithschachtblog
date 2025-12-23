@@ -177,6 +177,7 @@ def index(request):
         {
             "items": items,
             "entries": Entry.objects.filter(is_draft=False)
+            .exclude(series__title="Today I Learned")
             .only("id", "slug", "created", "title", "extra_head_html")
             .prefetch_related("tags")[0:40],
             "current_tags": find_current_tags(5),
