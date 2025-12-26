@@ -176,10 +176,11 @@ def index(request):
         "homepage.html",
         {
             "items": items,
-            "entries": Entry.objects.filter(is_draft=False)
+            "entries": Entry.objects.filter(is_draft=False, hide_from_highlights=False)
             .exclude(series__title="Today I Learned")
-            .only("id", "slug", "created", "title", "extra_head_html")
-            .prefetch_related("tags")[0:40],
+            .only("id", "slug", "created", "title", "extra_head_html", "super_highlight")
+            .prefetch_related("tags")
+            .order_by("-super_highlight", "-created")[0:40],
             "current_tags": find_current_tags(5),
         },
     )

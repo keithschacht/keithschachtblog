@@ -200,6 +200,8 @@ class BaseModel(models.Model):
 class Entry(BaseModel):
     title = models.CharField(max_length=255)
     body = models.TextField()
+    hide_from_highlights = models.BooleanField(default=False)
+    super_highlight = models.BooleanField(default=False)
     tweet_html = models.TextField(
         blank=True,
         null=True,
