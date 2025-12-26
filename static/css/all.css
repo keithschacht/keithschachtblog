@@ -1060,6 +1060,8 @@ div.help p {
   box-sizing: border-box;
   font-size: 16px;
   height: 32px;
+  margin: 0;
+  vertical-align: middle;
 }
 .search-input {
   flex: 1;
