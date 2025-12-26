@@ -59,13 +59,11 @@
 
 <p>You can subscribe to my blog via email newsletter, using Atom feeds or by following me on <!-- Mastodon or --> Twitter.</p>
 
-<div style="display: none;">
-  <h3 id="newsletter">Newsletter</h3>
-
-  <p>I send out <a href="https://x.substack.com/">a newsletter version</a> of this blog once every week or so. You can subscribe to that here:</p>
-
-  <!-- iframe src="https://x.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe -->
-</div>
+<form action="/subscribe/" method="POST" style="margin: 1em 0;">
+  {% csrf_token %}
+  <input type="email" name="email" placeholder="Your email address" required style="padding: 8px; width: 250px; border: 1px solid #6a6a6a;">
+  <input type="submit" value="Subscribe" style="padding: 8px 16px; background-color: #6a6a6a; color: white; border: 1px solid #6a6a6a; cursor: pointer;">
+</form>
 
 <ul>
     <li><a href="https://youtube.com/@keith-schacht">@keith-schacht</a> on YouTube</li>

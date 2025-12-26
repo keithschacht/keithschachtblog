@@ -1,5 +1,5 @@
 # coding=utf8
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse
 from django.contrib.admin.views.decorators import staff_member_required
 from django.views.decorators.cache import never_cache
@@ -644,6 +644,16 @@ def redirect_quotation(request, pk):
 
 def about(request):
     return render(request, "about.html")
+
+
+def subscribe(request):
+    from blog.models import Subscriber
+    if request.method == "POST":
+        email = request.POST.get("email", "").strip()
+        if email:
+            Subscriber.objects.get_or_create(email=email)
+        return render(request, "subscribed.html")
+    return redirect("/about/#subscribe")
 
 
 def custom_404(request, exception):

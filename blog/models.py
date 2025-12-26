@@ -377,6 +377,14 @@ class Blogmark(BaseModel):
         except ElementTree.ParseError:
             return False
 
+class Subscriber(models.Model):
+    email = models.EmailField(unique=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email
+
+
 class Photo(models.Model):
     flickr_id = models.CharField(max_length=32)
     server = models.CharField(max_length=8)
