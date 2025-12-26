@@ -1051,6 +1051,7 @@ div.help p {
 }
 #bigheadcontainer form > div {
   display: flex;
+  align-items: center;
 }
 .search-input,
 .search-submit {
